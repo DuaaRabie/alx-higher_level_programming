@@ -18,9 +18,6 @@ int check_cycle(listint_t *list)
 		return (1);
 
 	while (temp->next != loop)
-		loop = temp;
-
-	while (temp->next != loop)
 	{
 		j = 0;
 		next = temp->next;
