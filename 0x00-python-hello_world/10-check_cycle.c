@@ -7,30 +7,24 @@
  */
 int check_cycle(listint_t *list)
 {
-	int j = 0, i = 1;
-	listint_t *temp = list, *next, *array[200], *loop = NULL;
+	listint_t *temp = list, *speed_temp;
 
-	if (list == NULL)
+	if (list == NULL || list->next == NULL)
 		return (0);
 
-	array[0] = list;
 	if (temp->next == temp)
 		return (1);
 
-	while (temp->next != loop)
+	speed_temp = list->next;
+
+	while (1)
 	{
-		j = 0;
-		next = temp->next;
-		temp = next;
-		array[i] = temp;
-		array[i + 1] = NULL;
-		while (array[j])
-		{
-			if (temp->next == array[j])
-				return (1);
-			j++;
-		}
-		i++;
+		if (speed_temp->next == NULL)
+			return (0);
+		if (speed_temp->next == temp)
+			return (1);
+		temp = temp->next;
+		speed_temp = speed_temp->next->next;
 	}
 
 	return (0);
