@@ -12,18 +12,11 @@ int check_cycle(listint_t *list)
 	if (list == NULL || list->next == NULL)
 		return (0);
 
-	if (temp->next == temp)
-		return (1);
-
 	speed_temp = list->next;
-	if (speed_temp->next == NULL)
-		return (0);
-	while (1)
+	while (speed_temp && speed_temp->next)
 	{
 		if (speed_temp->next == temp)
 			return (1);
-		if (speed_temp->next == NULL)
-			return (0);
 		temp = temp->next;
 		speed_temp = speed_temp->next->next;
 	}
