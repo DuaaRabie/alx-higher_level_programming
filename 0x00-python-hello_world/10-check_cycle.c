@@ -16,10 +16,8 @@ int check_cycle(listint_t *list)
 		return (1);
 
 	speed_temp = list->next;
-	if (speed_temp->next == NULL)
-		return (0);
 
-	while (1)
+	while (temp->next && speed_temp->next)
 	{
 		if (speed_temp->next == NULL)
 			return (0);
