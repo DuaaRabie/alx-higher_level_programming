@@ -16,11 +16,12 @@ int check_cycle(listint_t *list)
 		return (1);
 
 	speed_temp = list->next;
-
-	while (temp->next && speed_temp->next)
+	while (1)
 	{
 		if (speed_temp->next == temp)
 			return (1);
+		if (speed_temp->next == NULL)
+			return (0);
 		temp = temp->next;
 		speed_temp = speed_temp->next->next;
 	}
