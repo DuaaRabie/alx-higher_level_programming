@@ -38,12 +38,14 @@ int is_palindrome(listint_t **head)
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 
-	while (fast)
+	while (fast && fast->next)
 	{
 		fast = fast->next->next;
 		prev = slow;
 		slow = slow->next;
 	}
+	if (fast != NULL)
+		slow = slow->next;
 
 	prev->next = NULL;
 	secondhalf = reverse_listint(&slow);
