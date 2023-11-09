@@ -3,7 +3,9 @@ def roman_to_int(roman_string):
     total = 0
     prev_value = 0
     prev_total = 0
-    if roman_string is not None and type(roman_string) is str:
+    if roman_string is None or type(roman_string) is not str:
+        return 0
+    else:
         for char in reversed(roman_string):
             if char == 'I':
                 total += 1
