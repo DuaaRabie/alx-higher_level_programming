@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
     total = 0
+    prev_value = 0
     prev_total = 0
     if roman_string is not None and type(roman_string) is str:
         for char in reversed(roman_string):
@@ -18,7 +19,8 @@ def roman_to_int(roman_string):
                 total += 500
             elif char == 'M':
                 total += 1000
-            if total < prev_total:
-                total = prev_total - (2 * total)
+            if prev_value > total - prev_total:
+                total = total - (2 * (total - prev_total))
             prev_total = total
+            prev_value = total - prev_total
     return total
