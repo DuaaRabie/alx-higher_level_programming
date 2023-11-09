@@ -1,28 +1,15 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    total = 0
-    prev_value = 0
-    prev_total = 0
     if roman_string is None or type(roman_string) is not str:
         return 0
-    else:
-        for char in reversed(roman_string):
-            if char == 'I':
-                total += 1
-            elif char == 'V':
-                total += 5
-            elif char == 'X':
-                total += 10
-            elif char == 'L':
-                total += 50
-            elif char == 'C':
-                total += 100
-            elif char == 'D':
-                total += 500
-            elif char == 'M':
-                total += 1000
-            if prev_value > total - prev_total:
-                total = total - (2 * (total - prev_total))
-            prev_total = total
-            prev_value = total - prev_total
+    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    total = 0
+    prev_value = 0
+    for char in reversed(roman_string):
+        current_value = values[char]
+        if current_value < prev_value:
+            total -= current_value
+        else:
+            total += current_value
+        prev_value = current_value
     return total
