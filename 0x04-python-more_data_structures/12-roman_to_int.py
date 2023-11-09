@@ -19,6 +19,6 @@ def roman_to_int(roman_string):
             elif char == 'M':
                 total += 1000
             if total < prev_total:
-                total = total - (2 * prev_total)
+                total = prev_total - (2 * total)
             prev_total = total
     return total
