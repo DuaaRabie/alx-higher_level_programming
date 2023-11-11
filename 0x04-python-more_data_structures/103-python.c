@@ -38,7 +38,7 @@ void print_python_bytes(PyObject *p)
  */
 void print_python_list(PyObject *p)
 {
-	int i = 0, size = (int)(PySequence_Size(p));
+	int i = 0, size = ((PyListObject *)p)->ob_base.ob_size;
 	int alloc = ((PyListObject *) p)->allocated;
 	PyObject *item;
 
@@ -46,7 +46,7 @@ void print_python_list(PyObject *p)
 	printf("[*] Size of the Python List = %d\n[*] Allocated = %d\n", size, alloc);
 	for (i = 0; i < size; i++)
 	{
-		item = PySequence_GetItem(p, i);
-		printf("Element %d: %s\n", i, Py_TYPE(item)->tp_name);
+		item = ((PyListObject *)p)->ob_item[i];
+		printf("Element %d: %s\n", i, item->ob_type->tp_name);
 	}
 }
