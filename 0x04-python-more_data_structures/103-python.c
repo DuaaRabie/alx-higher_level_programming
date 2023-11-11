@@ -20,7 +20,7 @@ void print_python_bytes(PyObject *p)
 		printf("[.] bytes object info\n");
 		printf("  size: %d\n", (int)(PyBytes_Size(p)));
 		printf("  trying string: %s\n", PyBytes_AsString(p));
-		printf("  first %d bytes:", (int)size < 10? (int)size + 1 : 10);
+		printf("  first %d bytes: ", (int)size < 10? (int)size + 1 : 10);
 		for (i = 0; i <= size && i < 10; i++)
 		{
 			printf("%02x", (unsigned char)*firstbytes);
