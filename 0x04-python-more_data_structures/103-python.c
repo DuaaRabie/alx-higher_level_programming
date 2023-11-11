@@ -9,22 +9,23 @@
 void print_python_bytes(PyObject *p)
 {
 	char *firstbytes;
-	int firstsize, i;
 	Py_ssize_t size;
+	int i;
 
 	if (!(PyBytes_Check(p)))
 		printf("[ERROR] Invalid Bytes Object");
 	else
 	{
-		firstsize = (int)(PyBytes_AsStringAndSize(p, &firstbytes, &size));
-		printf("[.] bytes object info");
-		printf("size: %d", (int)(PyBytes_Size(p)));
-		printf("trying string: %s", PyBytes_AsString(p));
-		printf("first %d bytes:", firstsize);
-		for (i = 0; i < firstsize; i++)
+		(int)(PyBytes_AsStringAndSize(p, &firstbytes, &size));
+		printf("[.] bytes object info\n");
+		printf("  size: %d\n", (int)(PyBytes_Size(p)));
+		printf("  trying string: %s\n", PyBytes_AsString(p));
+		printf("  first %d bytes:", (int)size < 10? (int)size + 1 : 10);
+		for (i = 0; i <= size && i < 10; i++)
 		{
-			printf("%p", &firstbytes[i]);
-			printf("%s", i == firstsize - 1? "\n" : " ");
+			printf("%02x", (unsigned char)*firstbytes);
+			printf("%s", i == size || i == 9 ? "\n" : " ");
+			firstbytes++;
 		}
 	}
 	
