@@ -8,5 +8,5 @@ def magic_calculation(a, b):
             else:
                 result += a ** b / i
                 break
-            reslut = a + b
+            result = a + b
     return result
