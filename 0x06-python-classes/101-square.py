@@ -49,6 +49,6 @@ class Square:
     
     """ This Method represent the object """
     def __str__(self):
-        a = "\n * self.position[1]"
+        a = "\n" * self.position[1]
         b = [" " * self.position[0] + "#" * self.__size for i in range(self.__size)]
         return a + "\n".join(b)
