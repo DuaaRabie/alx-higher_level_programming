@@ -3,7 +3,7 @@
 
 
 class Square:
-    """ This class defines a Square"""
+    """ This Method defines a Square"""
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
         self.__position = position
@@ -27,8 +27,9 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple) or len(value) != 2 :
-            raise TypeError("position must be a tuple of 2 positive integers")
+        if not isinstance(value, tuple) or len(value) != 2 or \
+                not all(isinstance(x, int) and x >= 0 for x in value):
+                    raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
 
