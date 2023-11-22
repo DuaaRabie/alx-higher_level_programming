@@ -4,7 +4,7 @@
 
 class Square:
     """ This Method defines a Square"""
-    def __init__(self, size=0, position=0):
+    def __init__(self, size=0, position=(0, 0)):
         self.__size = size
         self.__position = position
 
@@ -27,7 +27,7 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple) or len(value) != 2:
+        if not isinstance(value, tuple) or len(value) != 2 :
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
@@ -39,8 +39,10 @@ class Square:
 
     """ This Method prints in stdout the square with the character #"""
     def my_print(self):
-        if self.__size == None:
+        if self.__size == 0:
             print()
+            if self.__position[1] <= 0:
+                print(self.__position[1] * " ")
         else:
-            for i in range(self.__size):
-                print(self.size * "#")
+            print("\n" * self.position[1], end="")
+            print("\n".join(" " * self.position[0] + "#" * self.__size for _ in range(self.__size)))
