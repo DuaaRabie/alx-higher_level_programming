@@ -5,6 +5,7 @@
 class MagicClass:
     """This class defines magic class"""
     def __init__(self, radius=0):
+        self._MagicClass__radius = 0
         if not isinstance(radius, (int, float)):
             raise TypeError('radius must be a number')
         else:
