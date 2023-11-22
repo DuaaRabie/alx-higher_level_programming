@@ -4,7 +4,7 @@
 
 class MagicClass:
     """This class defines magic class"""
-    def __init__(self, radius=0):
+    def __init__(self, radius):
         if not isinstance(radius, (int, float)):
             raise TypeError('radius must be a number')
         self._MagicClass__radius = radius
@@ -12,8 +12,8 @@ class MagicClass:
 
     """This Method computes the area"""
     def area(self):
-        return ((self._MagicClass__radius ** 2) * math.pi )
+        return (self._MagicClass__radius ** 2) * math.pi
 
     """This Method compute circumference"""
     def circumference(self):
-        return (2 * math.pi * self._MagicClass__radius)
+        return 2 * math.pi * self._MagicClass__radius
