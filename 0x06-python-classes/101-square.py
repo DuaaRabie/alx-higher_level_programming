@@ -29,10 +29,9 @@ class Square:
     def position(self, value):
         if not isinstance(value, tuple) or len(value) != 2 or \
                 not all(isinstance(x, int) and x >= 0 for x in value):
-                    raise TypeError(" position must be a tuple of 2 positive integers")
+            raise TypeError(" position must be a tuple of 2 positive integers")
         else:
             self.__position = value
-
 
     """ This Method returns the current square area """
     def area(self):
@@ -46,12 +45,14 @@ class Square:
             print("\n" * self.position[1], end="")
             for i in range(self.__size):
                 print(" " * self.position[0] + "#" * self.__size)
-    
+
     """ This Method represent the object """
     def __str__(self):
         if self.__size == 0:
             a = ""
         else:
             a = "\n" * self.position[1]
-        b = [(" " * self.position[0] + "#" * self.__size) for i in range(self.__size)]
+        b = [" " * self.position[0] for i in range(self.__size)]
+        c = ["#" * self.__size for i in range(self.__size)]
+        b = [x + y for x,y in zip(b, c)]
         return a + "\n".join(b)
