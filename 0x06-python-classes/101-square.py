@@ -54,5 +54,5 @@ class Square:
             a = "\n" * self.position[1]
         b = [" " * self.position[0] for i in range(self.__size)]
         c = ["#" * self.__size for i in range(self.__size)]
-        b = [x + y for x,y in zip(b, c)]
+        b = [x + y for x, y in zip(b, c)]
         return a + "\n".join(b)
