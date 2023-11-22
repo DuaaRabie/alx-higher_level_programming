@@ -5,8 +5,8 @@
 class Square:
     """ This Method defines a Square"""
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -46,3 +46,9 @@ class Square:
             print("\n" * self.position[1], end="")
             for i in range(self.__size):
                 print(" " * self.position[0] + "#" * self.__size)
+    
+    """ This Method represent the object """
+    def __str__(self):
+        a = "\n * self.position[1]"
+        b = [" " * self.position[0] + "#" * self.__size for i in range(self.__size)]
+        return a + "\n".join(b)
