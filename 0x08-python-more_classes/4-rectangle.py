@@ -43,7 +43,7 @@ class Rectangle():
         else:
             return 2 * (self.__width + self.__height)
 
-    """ This method return object representation """
+    """ This method return informal string for object representation """
     def __str__(self):
         a = ""
         if self.__width != 0 or self.__height != 0:
@@ -52,3 +52,7 @@ class Rectangle():
                     a += "\n"
                 a += "#" * self.__width
         return a
+
+    """ This method return formal string for object representation """
+    def __repr__(self):
+        return "Rectangle({}, {})".format(self.__width, self.__height)
