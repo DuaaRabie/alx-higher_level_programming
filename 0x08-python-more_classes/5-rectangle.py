@@ -46,7 +46,7 @@ class Rectangle():
     """ This method return informal string for object representation """
     def __str__(self):
         a = ""
-        if self.__width != 0 or self.__height != 0:
+        if self.__width != 0 and self.__height != 0:
             for i in range(self.__height):
                 if i > 0:
                     a += "\n"

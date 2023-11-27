@@ -5,6 +5,7 @@
 class Rectangle():
     """ Defines a Rectangle class """
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         self.height = height
@@ -53,8 +54,8 @@ class Rectangle():
             for i in range(self.__height):
                 if i > 0:
                     a += "\n"
-                a += "#" * self.__width
-        return a
+                a += str(self.print_symbol) * self.__width
+        return str(a)
 
     """ This method return formal string for object representation """
     def __repr__(self):
