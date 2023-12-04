@@ -1,0 +1,16 @@
+# Test file for MyList class
+
+# Create an instance of MyList
+ml = MyList([4, 2, 9, 6])
+
+# Call the print_sorted method
+ml.print_sorted()  # Expected output: [2, 4, 6, 9]
+
+# Add more elements to the list
+ml.extend([5, 3, 8, 7])
+
+# Call the print_sorted method again
+ml.print_sorted()  # Expected output: [2, 3, 4, 5, 6, 7, 8, 9]
+
+# Check the original list (it should not be sorted)
+print(ml)  # Expected output: [4, 2, 9, 6, 5, 3, 8, 7]
