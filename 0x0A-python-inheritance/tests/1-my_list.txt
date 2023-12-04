@@ -1,11 +1,13 @@
 >>> MyList = __import__('1-my_list').MyList
->>> ml = MyList([4, 2, 9, 6])
->>> ml
-[4, 2, 9, 6]
->>> ml.print_sorted()
-[2, 4, 6, 9]
+>>> ml = MyList()
+>>> ml.append(1)
+>>> ml.append(4)
+>>> ml.append(2)
+>>> ml.append(3)
 >>> ml.append(5)
->>> ml
-[4, 2, 9, 6, 5]
+>>> print(ml)
+[1, 4, 2, 3, 5]
 >>> ml.print_sorted()
-[2, 4, 5, 6, 9]
+[1, 2, 3, 4, 5]
+>>> print(ml)
+[1, 4, 2, 3, 5]
