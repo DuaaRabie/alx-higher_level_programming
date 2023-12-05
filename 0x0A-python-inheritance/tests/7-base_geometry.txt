@@ -1,0 +1,16 @@
+>>> from my_module import inherits_from
+>>> class MyClass:
+...    pass
+...
+>>> class MySubClass(MyClass):
+...    pass
+...
+>>> obj = MySubClass()
+>>> inherits_from(obj, MyClass)
+True
+>>> class UnrelatedClass:
+...    pass
+...
+>>> obj = UnrelatedClass()
+>>> inherits_from(obj, MyClass)
+False
