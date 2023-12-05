@@ -4,7 +4,7 @@
 
 
 def read_file(filename=""):
-	""" This function to read files """
-	with open(filename, "r", encoding="utf-8") as f:
-		for line in f:
-			print(line, end="")
+    """ This function to read files """
+    with open(filename, "r", encoding="utf-8") as f:
+    	for line in f:
+            print(line, end="")
