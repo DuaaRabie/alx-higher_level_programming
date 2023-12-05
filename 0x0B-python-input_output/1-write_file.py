@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-""" This Module to read files """
+""" This Module to write files """
 
 
-def read_file(filename=""):
-	""" This function to read files """
-	with open(filename, "r", encoding="utf-8") as f:
-		for line in f:
-			print(line)
+def write_file(filename="", text=""):
+    """ This function to write files """
+    with open(filename, "w", encoding="utf-8") as f:
+        count = f.write(text)
+    return count
