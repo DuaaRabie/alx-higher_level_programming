@@ -3,4 +3,5 @@
 
 
 def is_kind_of_class(obj, a_class):
+    """ This function check the object class"""
     return isinstance(obj, a_class)
