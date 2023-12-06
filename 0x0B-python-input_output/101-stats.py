@@ -6,7 +6,7 @@ import sys
 total_size = 0
 line_num = 0
 possible_status_code = [200, 301, 400, 401, 403, 404, 405, 500]
-status_code_dic = {code: 0 for code in possible_status_code}
+status_code_dic = {i: 0 for i in possible_status_code}
 try:
     for line in sys.stdin:
         line_num += 1
