@@ -25,4 +25,3 @@ except KeyboardInterrupt:
     for i in sorted(status_code_dic):
         if status_code_dic[i] > 0:
             print("{}: {}".format(i, status_code_dic[i]))
-
