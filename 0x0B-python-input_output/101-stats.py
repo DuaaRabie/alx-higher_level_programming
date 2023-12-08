@@ -11,19 +11,22 @@ try:
     for line in sys.stdin:
         line_num += 1
         line_list = line.split()
-        line_size = int(line_list[-1])
-        status_code = int(line_list[-2])
-        total_size += line_size
-        status_code_dic[status_code] += 1
+        try:
+            line_size = int(line_list[-1])
+            total_size += line_size
+        except ValueError:
+            continue
+        try:
+            status_code = int(line_list[-2])
+            status_code_dic[status_code] += 1
+        except ValueError:
+            continue
         if line_num % 10 == 0:
             print("File size: {}".format(total_size))
             for i in sorted(status_code_dic.keys()):
                 if status_code_dic[i]:
                     print("{}: {}".format(i, status_code_dic[i]))
 except KeyboardInterrupt as k:
-    print("File size: {}".format(total_size))
     for i in sorted(status_code_dic.keys()):
-        if status_code_dic[i] > 0:
+        if status_code_dic[i]:
             print("{}: {}".format(i, status_code_dic[i]))
-        if status_code_dic[i] == 500:
-            raise KeyboardInterrupt
