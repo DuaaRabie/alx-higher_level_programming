@@ -18,10 +18,12 @@ try:
         if line_num % 10 == 0:
             print("File size: {}".format(total_size))
             for i in sorted(status_code_dic.keys()):
-                if status_code_dic[i] > 0:
+                if status_code_dic[i]:
                     print("{}: {}".format(i, status_code_dic[i]))
-except KeyboardInterrupt:
+except KeyboardInterrupt as k:
     print("File size: {}".format(total_size))
     for i in sorted(status_code_dic.keys()):
         if status_code_dic[i] > 0:
             print("{}: {}".format(i, status_code_dic[i]))
+        if status_code_dic[i] == 500:
+            raise KeyboardInterrupt
