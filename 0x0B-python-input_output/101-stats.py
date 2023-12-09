@@ -26,7 +26,7 @@ try:
             for i in sorted(status_code_dic.keys()):
                 if status_code_dic[i]:
                     print("{}: {}".format(i, status_code_dic[i]))
-except KeyboardInterrupt as k:
+except KeyboardInterrupt:
     for i in sorted(status_code_dic.keys()):
         if status_code_dic[i]:
             print("{}: {}".format(i, status_code_dic[i]))
