@@ -18,15 +18,17 @@ try:
             continue
         try:
             status_code = int(line_list[-2])
-            status_code_dic[status_code] += 1
+            if status_code in possible_status_code:
+                status_code_dic[status_code] += 1
         except ValueError:
             continue
         if line_num % 10 == 0:
             print("File size: {}".format(total_size))
             for i in sorted(status_code_dic.keys()):
-                if status_code_dic[i]:
+                if status_code_dic[i] > 0:
                     print("{}: {}".format(i, status_code_dic[i]))
 except KeyboardInterrupt:
+    print("File size: {}".format(total_size)
     for i in sorted(status_code_dic.keys()):
-        if status_code_dic[i]:
+        if status_code_dic[i] > 0:
             print("{}: {}".format(i, status_code_dic[i]))
