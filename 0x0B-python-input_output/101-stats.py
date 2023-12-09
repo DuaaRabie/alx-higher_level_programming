@@ -32,3 +32,8 @@ except KeyboardInterrupt:
     for i in sorted(status_code_dic.keys()):
         if status_code_dic[i] > 0:
             print("{}: {}".format(i, status_code_dic[i]))
+finally:
+    print("File size: {}".format(total_size))
+    for i in sorted(status_code_dic.keys()):
+        if status_code_dic[i] > 0:
+            print("{}: {}".format(i, status_code_dic[i]))
