@@ -14,6 +14,10 @@ Using ``add_integer``
 -2
 >>> add_integer(0.2, 1.5)
 1
+>>> add_integer()
+ceback (most recent call last):
+...
+TypeError: a must be an integer
 >>> add_integer('a', 2)
 Traceback (most recent call last):
 ...
