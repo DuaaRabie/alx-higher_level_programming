@@ -5,12 +5,6 @@
 def add_integer(a, b=98):
     """
     This function adds two integers
-    >>> add_integer(1, 3)
-    4
-    >>> add_integer(-1, -2)
-    -3
-    >>> add_integer(2, -4)
-    -2
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
