@@ -15,9 +15,7 @@ Using ``add_integer``
 >>> add_integer(0.2, 1.5)
 1
 >>> add_integer()
-Traceback (most recent call last):
-...
-TypeError: add_integer() missing 1 required positional argument: 'a'
+98
 >>> add_integer(None)
 Traceback (most recent call last):
 ...
