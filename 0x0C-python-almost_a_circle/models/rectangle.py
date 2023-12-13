@@ -83,6 +83,7 @@ class Rectangle(Base):
         return x
 
     def update(self, *args):
+        """ update the instance attributes"""
         if len(args) > 0:
             self.id = args[0]
         if len(args) > 1:
