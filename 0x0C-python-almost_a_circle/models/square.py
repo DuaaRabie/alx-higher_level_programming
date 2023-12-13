@@ -10,4 +10,6 @@ class Square(Rectangle):
 
     def __str__(self):
         """ This method represents the squar"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        str_rep = "[Square] ({}) {}/{}".format(self.id, self.x, self.y)
+        str_rep += " - {}".format(self.width)
+        return str_rep
