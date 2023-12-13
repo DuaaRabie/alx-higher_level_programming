@@ -67,10 +67,10 @@ class Rectangle(Base):
 
     def display(self):
         """ This function to display rectangle with # """
-        for blankline in range(self.x, 0, -1):
+        for blankline in range(self.y, 0, -1):
             print()
         for col in range(self.height, 0, -1):
-            for space in range(self.y, 0, -1):
+            for space in range(self.x, 0, -1):
                 print(" ", end="")
             for row in range(self.width, 0, -1):
                 print("#", end="")
