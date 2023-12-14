@@ -6,8 +6,8 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """ This class for Square """
     def __init__(self, size, x=0, y=0, id=None):
-        self.size = size
         super().__init__(size, size, x, y, id)
+        self._size = size
 
     @property
     def size(self):
