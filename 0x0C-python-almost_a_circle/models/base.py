@@ -55,6 +55,6 @@ class Base():
         if name == "Rectangle":
             dummy = cls(width=1, height=1)
         elif name == "Square":
-            dummey = cls(size=1)
+            dummey = cls(1)
         dummy.update(**dictionary)
         return dummy
