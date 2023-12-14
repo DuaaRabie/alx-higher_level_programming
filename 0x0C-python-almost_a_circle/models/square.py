@@ -36,3 +36,9 @@ class Square(Rectangle):
                 setattr(self, key, value)
         for i, value in enumerate(args):
             setattr(self, ['id', 'size', 'x', 'y'][i], value)
+
+    def to_dictionary(self):
+        """ This mehtod returns the dictionary representation """
+        dic1 = ['id', 'x', 'size', 'y']
+        dic2 = [self.id, self.x, self.width, self.y]
+        return dict(zip(dic1, dic2))
