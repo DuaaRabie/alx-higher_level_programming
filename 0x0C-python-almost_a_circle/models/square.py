@@ -28,3 +28,11 @@ class Square(Rectangle):
         str_rep = "[Square] ({}) {}/{}".format(self.id, self.x, self.y)
         str_rep += " - {}".format(self.width)
         return str_rep
+
+    def update(self, *args, **kwargs):
+        """ This method to update square """
+        if kwargs and (not args or args is None):
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        for i, value in enumerate(args):
+            setattr(self, ['id', 'size', 'x', 'y'][i], value)
