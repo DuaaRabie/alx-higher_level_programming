@@ -66,7 +66,7 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        """ This function to display rectangle with # """
+        """ This method to display rectangle with # """
         for blankline in range(self.y, 0, -1):
             print()
         for col in range(self.height, 0, -1):
@@ -77,16 +77,22 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        """ This function return the class representation """
+        """ This method return the class representation """
         x = "[Rectangle] ({}) {}/{} ".format(self.id, self.x, self.y)
         x += "- {}/{}".format(self.width, self.height)
         return x
 
     def update(self, *args, **kwargs):
-        """ update the instance attributes"""
+        """ This method update the instance attributes"""
         if kwargs and (not args or args is None):
             for key, value in kwargs.items():
                 setattr(self, key, value)
         else:
             for i, value in enumerate(args):
                 setattr(self, ['id', 'width', 'height', 'x', 'y'][i], value)
+
+    def to_dictionary(self):
+        """ This mehtod returns the dictionary representation """
+        dic1 = ['x', 'y', 'id', 'height', 'width']
+        dic2 = [self.x, self.y, self.id, self.height, self.width]
+        return dict(zip(dic1, dic2))
