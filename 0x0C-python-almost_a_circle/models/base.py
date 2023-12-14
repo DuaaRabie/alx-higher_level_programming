@@ -61,5 +61,4 @@ class Base():
 
     def update(self, **kwargs):
         """ This method update the dummy instance"""
-        self.update(kwarys)
-
+        self.__dict__.update(kwarys)
