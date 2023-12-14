@@ -58,7 +58,3 @@ class Base():
             dummey = cls(size=1)
         dummy.update(**dictionary)
         return dummy
-
-    def update(self, **kwargs):
-        """ This method update the dummy instance"""
-        self.__dict__.update(kwarys)
