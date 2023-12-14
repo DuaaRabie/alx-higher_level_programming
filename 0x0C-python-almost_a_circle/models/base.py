@@ -40,3 +40,10 @@ class Base():
             repre = cls.to_json_string(list_objs)
         with open(file_name, "w") as f:
             f.write(repre)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ This method returns the list dict of the json string"""
+        if json_string is None or json_string == "":
+            return []
+        return json.loads(json_string)
