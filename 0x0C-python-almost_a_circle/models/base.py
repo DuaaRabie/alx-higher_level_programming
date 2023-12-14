@@ -22,7 +22,7 @@ class Base():
     @staticmethod
     def to_json_string(list_dictionaries):
         """ This method returns json string representation """
-        if list_dictionaries is None or list_dictionaries == []:
+        if list_dictionaries is None or not list_dictionaries:
             return "[]"
         to_conv = [
                 obj.to_dictionary() if not isinstance(obj, dict) else
@@ -47,3 +47,19 @@ class Base():
         if json_string is None or json_string == "":
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ This method returns instance for a dictionary"""
+        name = cls.__name__
+        if name == "Rectangle":
+            dummy = cls(width=1, height=1)
+        else:
+            dummey = cls(size=1)
+        dummy.update(**dictionary)
+        return dummy
+
+    def update(self, **kwargs):
+        """ This method update the dummy instance"""
+        self.update(kwarys)
+
