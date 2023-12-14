@@ -6,12 +6,11 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """ This class for Square """
     def __init__(self, size, x=0, y=0, id=None):
-        self.size = size
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        return self.size
+        return self._size
 
     @size.setter
     def size(self, value):
@@ -19,7 +18,7 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.size = value
+        self._size = value
         self.width = value
         self.height = value
 
