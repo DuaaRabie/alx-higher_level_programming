@@ -25,8 +25,8 @@ class Base():
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         to_conv = [
-                obj.to_dictionary() if not isinstance(obj, dict) else obj
-                for obj in list_dictionaries
+                obj.to_dictionary() if not isinstance(obj, dict) else
+                obj.__dict__ for obj in list_dictionaries
         ]
         return json.dumps(to_conv)
 
