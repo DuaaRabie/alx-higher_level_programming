@@ -70,5 +70,5 @@ class Base():
             with open(file_name, "r") as f:
                 data = f.read()
             strings = data.split('\n')
-            list_of_dic = [cls.from_json_string(string) for string in strings]
-            return [cls.create(**dic) for dic_list in list_of_dic for dic in dic_list]
+            lists = [cls.from_json_string(string) for string in strings]
+            return [cls.create(**dic) for dics in lists for dic in dics]
