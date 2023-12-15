@@ -25,11 +25,7 @@ class Base():
         """ This method returns json string representation """
         if list_dictionaries is None or not list_dictionaries:
             return "[]"
-        to_conv = [
-                obj.to_dictionary() if not isinstance(obj, dict) else
-                obj for obj in list_dictionaries
-        ]
-        return json.dumps(to_conv)
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
