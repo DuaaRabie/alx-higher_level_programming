@@ -3,5 +3,5 @@ SELECT city, AVG(value) AS avg_temp
 FROM temperatures
 WHERE EXTRACT(MONTH FROM date) IN (7, 8)
 GROUP BY city
-ORDER BY max_temp DESC
+ORDER BY avg_temp DESC
 LIMIT 3;
