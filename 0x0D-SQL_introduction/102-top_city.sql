@@ -1,5 +1,5 @@
 -- Temperatures 1
-SELECT city, MAX(value) AS max_temp
+SELECT city, AVG(value) AS avg_temp
 FROM temperatures
 WHERE EXTRACT(MONTH FROM date) IN (7, 8)
 GROUP BY city
