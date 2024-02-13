@@ -3,11 +3,10 @@
 const args = process.argv;
 
 if (args[2]) {
-  let first = Number(args[2]);
+  const first = Number(args[2]);
   if (!isNaN(first)) {
-  		while (first) {
+  		for (let i = 0; i < first; i++) {
     		console.log('C is fun');
-    		first = first - 1;
   		}
   } else {
   		console.log('Missing number of occurrences');
