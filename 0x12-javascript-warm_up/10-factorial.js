@@ -1,13 +1,13 @@
 #!/usr/bin/node
 
 const args = process.argv;
-let factorial = 1;
 
-if (isNaN(Number(args[2])) || Number(args[2]) === 0) {
-  factorial = 1;	
-} else {
-	for (i = Number(args[2]); i > 0; i--) {
-	  factorial *= i;
-	}
+function factorial(n) {
+  if (isNaN(n) || n === 0) {
+   return (1);	
+  } else {
+     return (n * factorial(n - 1));
+  }
 }
-console.log(factorial);
+
+console.log(factorial(Number(args[2])));
