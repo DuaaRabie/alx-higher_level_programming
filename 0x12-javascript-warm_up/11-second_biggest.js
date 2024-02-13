@@ -5,10 +5,10 @@ const args = process.argv;
 if (args.length < 4) {
   console.log(0);
 } else {
-  let biggest = Number(args[3]);
+  let biggest = Number(args[2]);
   let secbig = biggest;
 
-  for (let i = 4; i < args.length; i++) {
+  for (let i = 3; i < args.length; i++) {
 	  const current = Number(args[i]);
 
 	  if (current > biggest) {
