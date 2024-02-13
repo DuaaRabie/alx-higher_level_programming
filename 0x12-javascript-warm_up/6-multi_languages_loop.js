@@ -3,5 +3,5 @@
 const array = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
 for (const value of array) {
-	console.log(value);
+  console.log(value);
 }
