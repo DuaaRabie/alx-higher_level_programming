@@ -2,20 +2,21 @@
 
 const args = process.argv;
 
-if (args.length === 2) {
-  console.log(0);
-} else if (args.length === 3) {
+if (args.length < 4) {
   console.log(0);
 } else {
-  let biggest = args[3];
+  let biggest = Number(args[3]);
+  let secbig = biggest;
+
   for (let i = 4; i < args.length; i++) {
-	  if (args[i] > biggest) {
-	    biggest = args[i];
+	  const current = Number(args[i]);
+
+	  if (current > biggest) {
+	     secbig = biggest;
+	     biggest = current;
+	  } else if (current > secbig && current < biggest) {
+	    secbig = current;
 	  }
-  }
-  let secbig = args[3];
-  for (i = 4; i < args.length; i++) {
-	  if (args[i] > secbig && args[i] < biggest) { secbig = args[i]; }
   }
   console.log(secbig);
 }
