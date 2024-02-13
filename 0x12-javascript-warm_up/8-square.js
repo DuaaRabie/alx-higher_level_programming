@@ -1,13 +1,19 @@
 #!/usr/bin/node
 
 const args = process.argv;
-let first = Number(args[2]);
+const size = Number(args[2]);
+let square = '';
 
-if (first) {
-  while (first) {
-    console.log('C is fun');
-    first = first - 1;
+if (size) {
+  for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+      square += 'X';
+    }
+    if (i !== size - 1) {
+      square += '\n';
+    }
   }
+  console.log(square);
 } else {
-  console.log('Missing number of occurrences');
+  console.log('Missing size');
 }
