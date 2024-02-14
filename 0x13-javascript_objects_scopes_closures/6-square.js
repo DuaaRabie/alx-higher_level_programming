@@ -7,8 +7,8 @@ class Square extends Rectangle {
     super(size, size);
   }
 
-  charPrint(c) {
-    /*let result = '';
+  /*charPrint(c) {
+    let result = '';
 
     if (c === undefined) {
       c = 'X';
@@ -22,8 +22,8 @@ class Square extends Rectangle {
         result += '\n';
       }
     }
-    console.log(result);*/
-  }
+    console.log(result);
+  }*/
 }
 
 module.exports = Square;
