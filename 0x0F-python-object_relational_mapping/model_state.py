@@ -1,32 +1,19 @@
 #!/usr/bin/python3
 """ Module for states select """
-import MySQLdb
-import sys
+from sqlalchemy import create_engine, MetaData, Integer, String, \
+            Column, ForeignKey
+from sqlalchemy.orm import relationship
+from sqlalchemy.ext.declarative import declarative_base
 
 
-if __name__ == "__main__":
-    db = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=sys.argv[1],
-            passwd=sys.argv[2],
-            db=sys.argv[3],
-            charset="utf8")
+Base = declarative_base()
 
-    cursor = db.cursor()
-    query = "SELECT cities.name\
-            FROM cities JOIN states ON cities.state_id = states.id\
-            WHERE states.name = %s\
-            ORDER BY cities.id ASC"
-    cursor.execute(query, (sys.argv[4],))
+class State(Base):
+    __tablename__ = "states"
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(128), nullable=False)
 
-    rows = cursor.fetchall()
-    for row in rows:
-        for element in row:
-            print(element, end='')
-            if row != rows[(len(rows) - 1)]:
-                print(", ", end="")
-    print()
+engine = create_engine('mysql://username:password@localhost/dbname')
 
-    cursor.close()
-    db.close()
+Base.metadata.create_all(engine)
