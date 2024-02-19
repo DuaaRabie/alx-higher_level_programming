@@ -1,18 +1,24 @@
 #!/usr/bin/python3
 """ Module for states select """
-import  MySQLdb
+import MySQLdb
 import sys
 
 
-name, pw, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
-db = MySQLdb.connect(host="localhost", port=3306, user=name, passwd=pw, db=db_name)
-cursor = db.cursor()
+if __name__ == "__main__":
+    db = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=sys.argv[1],
+            passwd=sys.argv[2],
+            db=sys.argv[3],
+            charset='utf8')
 
-cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
-rows = cursor.fetchall()
-for row in rows:
-    print(row)
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
 
-cursor.close()
-db.close()
+    cursor.close()
+    db.close()
