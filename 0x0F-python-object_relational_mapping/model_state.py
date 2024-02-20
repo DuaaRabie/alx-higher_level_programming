@@ -13,7 +13,3 @@ class State(Base):
     
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
-
-engine = create_engine('mysql://username:password@localhost/dbname')
-
-Base.metadata.create_all(engine)
