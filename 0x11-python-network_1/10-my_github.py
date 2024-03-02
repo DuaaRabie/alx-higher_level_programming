@@ -12,7 +12,7 @@ if __name__ == "__main__":
     response = requests.post(url, auth=auth)
     try:
         res_json = response.json()
-    except requests.exceptions.JSONDecodeError as e:
+    except ValueError:
         print("Not a valid JSON")
         sys.exit(1)
 
