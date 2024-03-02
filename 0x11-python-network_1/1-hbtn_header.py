@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-""" This Module fetches alx intranet """
+""" This Module sends request to url and display value """
 import urllib.request
+import sys
 
 
 if __name__ == "__main__":
-    url = "https://alx-intranet.hbtn.io/status"
+    url = sys.argv[1]
+    request = urllib.request.Request(url)
     with urllib.request.urlopen(url) as response:
-        contents = response.read()
-        contents_utf8 = contents.decode('utf-8')
-        print("Body response:")
-        print("    - type: {}".format(type(contents)))
-        print("    - content: {}".format(contents))
-        print("    - utf8 content: {}".format(contents_utf8))
+        headers = response.headers
+        print(headers.get("X-Request-Id"))
