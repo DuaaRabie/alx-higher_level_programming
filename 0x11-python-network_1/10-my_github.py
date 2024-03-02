@@ -16,7 +16,6 @@ if __name__ == "__main__":
         res_json = response.json()
     except requests.exceptions.JSONDecodeError as e:
         print("Not a valid JSON")
-        sys.exit(1)
 
     if not res_json:
         print("No result")
