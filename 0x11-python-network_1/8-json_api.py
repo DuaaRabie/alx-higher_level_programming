@@ -11,5 +11,5 @@ if __name__ == "__main__":
         contents = response.text
         print(contents)
     except urllib.error.HTTPError as error:
-        if response.status_code >= 400:
+        if error.code >= 400:
             print("Error code: {}".format(error.code))
