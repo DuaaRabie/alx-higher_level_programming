@@ -12,9 +12,8 @@ if __name__ == "__main__":
         letter = ""
     data = {"q": letter}
     response = requests.post(url, data)
-    try:
-        res_json = response.json()
-    except requests.exceptions.JSONDecodeError as e:
+    res_json = response.json()
+    if response.status_code == 200:
         print("Not a valid JSON")
         sys.exit(1)
 
