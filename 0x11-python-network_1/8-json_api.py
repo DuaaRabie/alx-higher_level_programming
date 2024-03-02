@@ -2,7 +2,6 @@
 """ This Module sends request to url and display value """
 import sys
 import requests
-import json
 
 
 if __name__ == "__main__":
