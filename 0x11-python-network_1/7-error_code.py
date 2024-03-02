@@ -3,6 +3,7 @@
 import sys
 import requests
 
+
 if __name__ == "__main__":
     url = sys.argv[1]
     try:
@@ -10,4 +11,5 @@ if __name__ == "__main__":
         contents = response.text
         print(contents)
     except urllib.error.HTTPError as error:
-        print("Error code: {}".format(error.code))
+        if error.code >= 400:
+            print("Error code: {}".format(error.code))
