@@ -10,12 +10,6 @@ if __name__ == "__main__":
     password = sys.argv[2]
     auth = (username, password)
     response = requests.post(url, auth=auth)
-    try:
+    if response.status_code == 200:
         res_json = response.json()
-    except requests.exceptions.JSONDecodeError as e:
-        print("Not a valid JSON")
-
-    if not res_json:
-        print("No result")
-    else:
         print(res_json.get("id"))
