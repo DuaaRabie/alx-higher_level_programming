@@ -5,12 +5,11 @@ import requests
 
 
 if __name__ == "__main__":
-    url = "https://github.com"
+    url = "https://api.github.com/user"
     username = sys.argv[1]
     password = sys.argv[2]
-    data = {"username": username,
-            "password": password}
-    response = requests.post(url, data)
+    auth = (username, password)
+    response = requests.post(url, auth=auth)
     try:
         res_json = response.json()
     except requests.exceptions.JSONDecodeError as e:
