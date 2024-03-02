@@ -5,12 +5,11 @@ import requests
 
 
 if __name__ == "__main__":
-    url = "http://0.0.0.0:5000/search_user"
-    if len(sys.argv) > 1:
-        letter = sys.argv[1]
-    else:
-        letter = ""
-    data = {"q": letter}
+    url = "https://github.com"
+    username = sys.argv[1]
+    password = sys.argv[2]
+    data = {"username": username,
+            "password": password}
     response = requests.post(url, data)
     try:
         res_json = response.json()
@@ -20,4 +19,4 @@ if __name__ == "__main__":
     if not res_json:
         print("No result")
     else:
-        print("[{}] {}".format(res_json.get("id"), res_json.get("name")))
+        print(res_json.get("id"))
