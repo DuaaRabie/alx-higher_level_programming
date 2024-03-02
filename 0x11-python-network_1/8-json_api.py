@@ -22,4 +22,3 @@ if __name__ == "__main__":
         print("No result")
     else:
         print("[{}] {}".format(res_json.get("id"), res_json.get("name")))
-
