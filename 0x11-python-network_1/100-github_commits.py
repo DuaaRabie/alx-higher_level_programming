@@ -10,8 +10,9 @@ if __name__ == "__main__":
     owner_name = sys.argv[2]
     auth = (repository_name, owner_name)
     response = requests.post(url, auth=auth)
-    res_json = response.json()
-    if response.status_code == 200:
+    try:
+        res_json = response.json()
+    except ValueError:
         print("Not a valid JSON")
         sys.exit(1)
 
