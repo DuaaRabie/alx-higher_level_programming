@@ -9,9 +9,9 @@ if __name__ == "__main__":
     password = sys.argv[2]
     url = f"https://api.github.com/users/{username}"
     headers = {'Authorization': f'password {password}'}
-    try:
-        response = requests.post(url, headers=headers)
-        res_json = response.json()
+    response = requests.post(url, headers=headers)
+    res_json = response.json()
+    if response.status_code == 200:
         print(res_json.get("id"))
-    except requests.exceptions.HTTPError as err:
+    else:
         print("None")
