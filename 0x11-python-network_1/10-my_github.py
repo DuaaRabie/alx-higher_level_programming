@@ -11,7 +11,7 @@ if __name__ == "__main__":
     headers = {'Authorization': f'password {password}'}
     response = requests.get(url, headers=headers)
     res_json = response.json()
-    if res_json.get("id") is not None:
+    if res_json.get("id") is None:
         response = requests.post(url, headers=headers)
         print(res_json.get("id"))
     else:
