@@ -16,5 +16,4 @@ if __name__ == "__main__":
         except ValueError:
             print("Not a valid JSON")
             sys.exit(1)
-        if res_json:
-            print(res_json.get("id"))
+        print(res_json.get("id"))
