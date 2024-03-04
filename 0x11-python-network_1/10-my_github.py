@@ -10,7 +10,7 @@ if __name__ == "__main__":
     url = f"https://api.github.com/users/{username}"
     headers = {'Authorization': f'password {password}'}
     try:
-        response = requests.get(url, headers=headers)
+        response = requests.post(url, headers=headers)
         res_json = response.json()
         print(res_json.get("id"))
     except requests.exceptions.HTTPError as err:
