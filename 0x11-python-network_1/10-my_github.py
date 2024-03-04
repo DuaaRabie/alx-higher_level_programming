@@ -16,7 +16,5 @@ if __name__ == "__main__":
         print("Not a valid JSON")
         sys.exit(1)
 
-    if not res_json:
-        print("No result")
-    if response.status_code == 200:
+    if res_json:
         print(res_json.get("id"))
