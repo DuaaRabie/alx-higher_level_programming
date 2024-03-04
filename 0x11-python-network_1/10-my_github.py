@@ -12,7 +12,6 @@ if __name__ == "__main__":
     try:
         response = requests.post(url, headers=headers)
         res_json = response.json()
-        if
         print(res_json.get("id"))
     except requests.exceptions.HTTPError as err:
         print("None")
