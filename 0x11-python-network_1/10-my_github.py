@@ -18,5 +18,5 @@ if __name__ == "__main__":
 
     if not res_json:
         print("No result")
-    else:
+    if response.status_code == 200:
         print(res_json.get("id"))
