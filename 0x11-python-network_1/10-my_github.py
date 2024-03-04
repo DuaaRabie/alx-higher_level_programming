@@ -13,5 +13,5 @@ if __name__ == "__main__":
     res_json = response.json()
     if response.status_code != 401:
         print("None")
-    if response.status_code == 200:
+    else:
         print(res_json.get("id"))
