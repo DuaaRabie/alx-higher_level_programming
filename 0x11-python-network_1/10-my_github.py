@@ -12,6 +12,6 @@ if __name__ == "__main__":
     response = requests.post(url, headers=headers)
     res_json = response.json()
     if response.status_code != 401:
-        print("None")
+        print("no")
     else:
         print(res_json.get("id"))
