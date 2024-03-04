@@ -5,11 +5,11 @@ import requests
 
 
 if __name__ == "__main__":
-    url = "https://api.github.com/user"
     username = sys.argv[1]
     password = sys.argv[2]
-    auth = (username, password)
-    response = requests.post(url, auth=auth)
+    url = f"https://api.github.com/users/{username}"
+    headers = {'Authorization': f'password {password}'}
+    response = requests.post(url, headers=headers)
     try:
         res_json = response.json()
     except ValueError:
@@ -19,4 +19,4 @@ if __name__ == "__main__":
     if not res_json:
         print("No result")
     else:
-        print(res_json.get("user_id"))
+        print(res_json.get("id"))
