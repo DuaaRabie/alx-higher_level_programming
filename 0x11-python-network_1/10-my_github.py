@@ -11,7 +11,7 @@ if __name__ == "__main__":
     headers = {'Authorization': f'password {password}'}
     response = requests.post(url, headers=headers)
     res_json = response.json()
-    if response.status_code >= 400:
+    if response.status_code == 401:
         print("None")
-    if response.status_code == 200:
+    else:
         print(res_json.get("id"))
