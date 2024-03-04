@@ -11,4 +11,8 @@ if __name__ == "__main__":
     headers = {'Authorization': f'password {password}'}
     response = requests.get(url, headers=headers)
     res_json = response.json()
-    print(res_json.get("id"))
+    if res_json.get("id") != None:
+        response = requests.get(url, headers=headers)
+        print(res_json.get("id"))
+    else:
+        print(res_json.get("id"))
