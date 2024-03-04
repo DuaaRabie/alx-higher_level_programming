@@ -10,10 +10,5 @@ if __name__ == "__main__":
     url = f"https://api.github.com/users/{username}"
     headers = {'Authorization': f'password {password}'}
     response = requests.get(url, headers=headers)
-    if response.status_code == 200:
-        try:
-            res_json = response.json()
-        except ValueError:
-            print("Not a valid JSON")
-            sys.exit(1)
-        print(res_json.get("id"))
+    res_json = response.json()
+    print(res_json.get("id"))
