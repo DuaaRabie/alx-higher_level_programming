@@ -19,4 +19,4 @@ if __name__ == "__main__":
     if not res_json:
         print("No result")
     else:
-        print(res_json.get("id"))
+        print(res_json.get("user_id"))
