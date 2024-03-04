@@ -12,4 +12,5 @@ if __name__ == "__main__":
     response = requests.post(url, headers=headers)
     res_json = response.json()
     if not response.status_code == 200:
-        print(res_json.get("id"))
+        if requests.get(url, headers=headers):
+            print(res_json.get("id"))
