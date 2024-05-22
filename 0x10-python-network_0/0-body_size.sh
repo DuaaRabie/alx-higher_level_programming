@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #curl body size
 
 if [ $# -lt 1 ]; then
