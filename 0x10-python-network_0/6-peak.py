@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-# find peak
+""" find peak """
+
+
 def find_peak(list_of_integers):
+    """ this function for finding peak"""
     left = 0
     right = len(list_of_integers) - 1
 
